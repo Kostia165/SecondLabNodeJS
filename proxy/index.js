@@ -5,7 +5,7 @@ var app = express();
 var request = require('request');
 var config = require('./config.js');
 
-app.route('/', function(req, res) {
+app.route('/').get(function(req, res) {
     request('http://' + config.get('ip') + ':' + config.get('port') +'/' , function(error, response, body) {
         res.send(body);
     });
